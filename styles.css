@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Corrigido */
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -23,7 +23,7 @@ body {
     color: var(--claro);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo do body */
+    align-items: center;
 }
 
 .navegacao {
@@ -32,18 +32,20 @@ body {
     background: rgba(15, 23, 42, 0.8);
     width: 100%;
     z-index: 100;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     display: flex;
     justify-content: center;
+    backdrop-filter: blur(5px);
 }
 
 .menu {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 3rem;
-    padding: 0;
+    gap: 1.5rem;
+    padding: 0 1rem;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 .menu-link {
@@ -52,6 +54,7 @@ body {
     font-weight: 500;
     position: relative;
     padding: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .menu-link::after {
@@ -75,13 +78,16 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center; /* Centraliza textos */
-    padding-top: 6rem; /* Para compensar a navegação fixa */
+    text-align: center;
+    padding: 6rem 1rem 2rem;
+    width: 100%;
 }
 
 .foto-perfil {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1/1;
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
     border-radius: 50%;
     border: 4px solid var(--vidro);
@@ -89,57 +95,62 @@ body {
     animation: flutuar 5s ease-in-out infinite;
 }
 
-h1{
-    font-size: 3.5rem;
+h1 {
+    font-size: 2.5rem;
     color: var(--primaria);
     font-weight: bold;
-    margin: 20px;
+    margin: 20px 0;
 }
 
-.cabecalho-sub-titulo{
-    font-size: 1.5rem;
+.cabecalho-sub-titulo {
+    font-size: 1.2rem;
     color: var(--claro);
+    padding: 0 1rem;
 }
 
-.sobre{
-    padding: 6rem 2rem;
+.sobre {
+    padding: 4rem 1rem;
+    width: 100%;
 }
 
-.sobre-titulo{
-    font-size: 3rem;
+.sobre-titulo {
+    font-size: 2rem;
     color: var(--claro);
     text-align: center;
     margin-bottom: 20px;
 }
 
-.sobre-caixa{
-    padding: 2rem;
+.sobre-caixa {
+    padding: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     border-radius: 16px;
     border: 1px solid var(--vidro);
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px); /* Filtro esfumaçado */
+    backdrop-filter: blur(10px);
 }
 
-.sobre-paragrafo{
+.sobre-paragrafo {
     text-align: center;
     font-size: 1rem;
-
+    line-height: 1.6;
 }
 
-.projetos{
-    padding: 6rem 2rem;
+.projetos {
+    padding: 4rem 1rem;
+    width: 100%;
 }
-.projetos-caixa{
+
+.projetos-caixa {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.projetos-card{
+.projetos-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     backdrop-filter: blur(10px);
@@ -149,95 +160,109 @@ h1{
     cursor: pointer;
 }
 
-.projetos-card:hover{
+.projetos-card:hover {
     box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-    transform: translate(-10px) scale(1.03); 
+    transform: translateY(-10px) scale(1.03);
 }
 
-.projetos-titulo{
+.projetos-titulo {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
-
-
-.projetos-imagem{
-    height: 200px;
+.projetos-imagem {
+    height: 180px;
     width: 100%;
     object-fit: cover;
 }
 
-.caixa-textos-projeto{
-    padding: 1.5rem;
+.caixa-textos-projeto {
+    padding: 1.2rem;
 }
 
-.paragrafo-projetos{
-    color:rgba(226, 232, 240, 0.8);
-    line-height: 1.25rem;
-}
-.info-projetos{
-    margin-bottom: 5px;
+.paragrafo-projetos {
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
-
-.contatos{
-    padding: 6rem 2rem;
+.info-projetos {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
-.contatos-titulo{
+.contatos {
+    padding: 4rem 1rem;
+    width: 100%;
+}
+
+.contatos-titulo {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
-.formulario-contato{
-    max-width: 600px;
+.formulario-contato {
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    width: 800px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
-    padding: 2rem;
+    padding: 1.5rem;
     border: 1px solid var(--vidro);
     border-radius: 16px;
 }
-.campo-form{
+
+.campo-form {
     width: 100%;
-    max-width: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     color: var(--claro);
-     border: 1px solid var(--vidro);
-     outline: none;
-}
-.campo-form:focus{
-    border-color: var(--secundaria);
-    box-shadow: 0 0 10px rgba(79,70,229, 0.3);
-}
-.grupo-form{
-    margin-bottom: 1.5rem;
+    border: 1px solid var(--vidro);
+    outline: none;
+    font-size: 0.9rem;
 }
 
-.botao-form{
+.campo-form:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.grupo-form {
+    margin-bottom: 1.2rem;
+}
+a {
+    text-decoration: none;
+    color: inherit; /* Isso faz o link herdar a cor do texto do seu elemento pai */
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit; /* Remove qualquer cor alterada ao passar o mouse ou clicar */
+}
+.botao-form {
     color: var(--claro);
     background: linear-gradient(45deg, var(--primaria), var(--secundaria));
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: all 0.5 ease;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
-.botao-form:hover{
+.botao-form:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4)
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
 }
 
-.particulas{
+.particulas {
     position: fixed;
     top: 0;
     left: 0;
@@ -245,75 +270,87 @@ h1{
     height: 100%;
     z-index: -1;
     opacity: 0.5;
-    background: radial-gradient(circle at 10% 20%,var(--primaria) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%,var(--secundaria) 0%, transparent 20%),var(--maisEscuro);
-            
+    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
 }
 
-@keyframes flutuar{
-    0%, 100%{
+@keyframes flutuar {
+    0%, 100% {
         transform: translateY(0);
     }
-    50%{
-        transform: translateY(-20px);
+    50% {
+        transform: translateY(-15px);
     }
 }
 
-
-@media (max-width: 768px) {
+/* Media Queries para ajustes específicos */
+@media (min-width: 768px) {
+    .menu {
+        gap: 3rem;
+    }
+    
+    .menu-link {
+        font-size: 1rem;
+    }
+    
     h1 {
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
-
+    
     .cabecalho-sub-titulo {
-        font-size: 1.2rem;
-        padding: 0 1rem;
+        font-size: 1.5rem;
     }
+    
+    .sobre {
+        padding: 6rem 2rem;
+    }
+    
+    .sobre-titulo {
+        font-size: 2.5rem;
+    }
+    
+    .projetos {
+        padding: 6rem 2rem;
+    }
+    
+    .projetos-titulo, .contatos-titulo {
+        font-size: 2.5rem;
+    }
+    
+    .formulario-contato {
+        max-width: 600px;
+        padding: 2rem;
+    }
+    
+    .campo-form, .botao-form {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
 
+@media (min-width: 1024px) {
+    .cabecalho {
+        padding-top: 8rem;
+    }
+    
     .foto-perfil {
-        width: 200px;
+        max-width: 350px;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    .projetos-caixa {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .projetos-imagem {
         height: 200px;
     }
-
-    .menu {
-       
-        gap: 1rem;
-    }
-
-    .navegacao {
-        
-        padding: 1rem;
-    }
-
-    .sobre,
-    .projetos,
-    .contatos {
-        padding: 3rem 1rem;
-    }
-
-    .sobre-titulo,
-    .projetos-titulo,
-    .contatos-titulo {
-        font-size: 2rem;
-    }
-
-    .sobre-caixa {
-        padding: 1rem;
-    }
-
-    .formulario-contato {
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .projetos-card:hover {
-        transform: none;
-        box-shadow: none;
-    }
-
-    .projetos-imagem {
-        height: 160px;
-    }
-
     
+    .paragrafo-projetos, .info-projetos {
+        font-size: 1rem;
+    }
 }
