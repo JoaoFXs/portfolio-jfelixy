@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <nav class="navegacao">
         <ul class="menu">
             <li>
@@ -20,16 +21,78 @@
                 <a href="#projeto">Projeto</a>
             </li>
             <li>
-                <a href="#contatos"">Contato</a>
+                <a href="#contatos">Contato</a>
             </li>
         </ul>
     </nav>
-    <main>
-        <div>
-            <img src=" ./img/perfil.jpeg" />
 
-                </div>
-                </main>
+    <main id="inicio" class="cabecalho">
+        <div>
+            <img src=" ./img/perfil.jpeg" alt="Foto João Felix" class="foto-perfil" />
+        </div>
+        <h1>João Felix</h1>
+        <p>Desenvolvedor Java</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Sou formado em Ciência da Computação e atualmente trabalho como Desenvolvedor
+                Java na IBM, contribuindo
+                para um projeto da empresa VALE.
+                Tenho experiência em desenvolvimento backend utilizando Java e o ecossistema Spring, incluindo Spring
+                Boot, Spring MVC, Spring Data, Spring Security e Spring Cloud.
+                No frontend, trabalho com React.js, utilizando ferramentas modernas como JavaScript, TypeScript,
+                Tailwind CSS e React Router para construir interfaces de usuário rápidas e responsivas.
+                Também possuo conhecimento em computação em nuvem, com experiência prática em Microsoft Azure e Amazon
+                Web Services (AWS), aplicando as melhores práticas em arquitetura, segurança e escalabilidade.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/perfil.jpeg" alt="projeto 1" class="projetos-imagem">
+                <h3 class="info-projetos">ClimaSync</h3>
+                <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit unde
+                    sed sit facere sequi aliquam
+                    ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/perfil.jpeg" alt="projeto 2" class="projetos-imagem">
+                <h3 class="info-projetos">ImageVault</h3>
+                <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit unde
+                    sed sit facere sequi aliquam
+                    ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/perfil.jpeg" alt="projeto 3" class="projetos-imagem">
+                <h3 class="info-projetos">AdoptionPet</h3>
+                <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit unde
+                    sed sit facere sequi aliquam
+                    ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Contatos</h2>
+        <form class="formulario-contato" id="formulario">
+            <div class="nome-form">
+                <input placeholder="Nome" class="campo-form" />
+            </div>
+            <div class="grupo-form">
+                <textarea class="text-form" placeholder="Digite sua mensagem.."></textarea>
+            </div>
+        </form>
+    </section>
 </body>
 
 
