@@ -4,34 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>Portfólio | João Felix</title>
 </head>
 
 <body>
 
+    <div class="particulas"></div>
+
     <nav class="navegacao">
         <ul class="menu">
             <li>
-                <a href="#inicio">Início</a>
+                <a href="#inicio" class="menu-link">Início</a>
             </li>
             <li>
-                <a href="#sobre">Sobre</a>
+                <a href="#sobre" class="menu-link">Sobre</a>
             </li>
             <li>
-                <a href="#projeto">Projeto</a>
+                <a href="#projeto" class="menu-link">Projeto</a>
             </li>
             <li>
-                <a href="#contatos">Contato</a>
+                <a href="#contatos" class="menu-link">Contato</a>
             </li>
         </ul>
     </nav>
 
     <main id="inicio" class="cabecalho">
-        <div>
-            <img src=" ./img/perfil.jpeg" alt="Foto João Felix" class="foto-perfil" />
-        </div>
+        <img src=" ./img/perfil.jpeg" alt="Foto João Felix" class="foto-perfil" />
         <h1>João Felix</h1>
-        <p>Desenvolvedor Java</p>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Java</p>
     </main>
 
     <section id="sobre" class="sobre">
@@ -57,42 +58,62 @@
 
             <div class="projetos-card">
                 <img src="./img/perfil.jpeg" alt="projeto 1" class="projetos-imagem">
-                <h3 class="info-projetos">ClimaSync</h3>
-                <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit unde
-                    sed sit facere sequi aliquam
-                    ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.</p>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">CLIMASYNC</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit
+                        unde
+                        sed sit facere sequi aliquam
+                        ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.
+                    </p>
+                </div>
             </div>
 
             <div class="projetos-card">
                 <img src="./img/perfil.jpeg" alt="projeto 2" class="projetos-imagem">
-                <h3 class="info-projetos">ImageVault</h3>
-                <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit unde
-                    sed sit facere sequi aliquam
-                    ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.</p>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">IMAGE VAULT</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit
+                        unde
+                        sed sit facere sequi aliquam
+                        ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.
+                    </p>
+                </div>
             </div>
 
             <div class="projetos-card">
                 <img src="./img/perfil.jpeg" alt="projeto 3" class="projetos-imagem">
-                <h3 class="info-projetos">AdoptionPet</h3>
-                <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit unde
-                    sed sit facere sequi aliquam
-                    ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.</p>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">ADOPTION PET</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est fugit
+                        unde
+                        sed sit facere sequi aliquam
+                        ducimus non, esse, provident facilis iusto error id. Unde aliquid illum voluptate delectus ea.
+                    </p>
+                </div>
             </div>
-        </div>
 
     </section>
 
     <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Contatos</h2>
+        <h2 class="contatos-titulo">Entre em Contato</h2>
         <form class="formulario-contato" id="formulario">
-            <div class="nome-form">
+            <div class="grupo-form">
                 <input placeholder="Nome" class="campo-form" />
             </div>
             <div class="grupo-form">
-                <textarea class="text-form" placeholder="Digite sua mensagem.."></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem.."></textarea>
             </div>
+
+            <button type="submit" class="botao-form">
+                Enviar WhatsApp
+            </button>
         </form>
     </section>
+
+    <script>
+
+
+    </script>
 </body>
 
 
