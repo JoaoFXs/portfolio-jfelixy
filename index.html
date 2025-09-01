@@ -5,15 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#4f46e5" />
-    <link rel="stylesheet" href="styles.css" />
     <title>Portfólio | João Felix</title>
+ <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="particulas" aria-hidden="true"></div>
+    <div class="fundo-gradiente" aria-hidden="true"></div>
 
     <nav class="navegacao" aria-label="Menu principal">
-        <ul class="menu">
+        <ul class="menu container">
             <li><a href="#inicio" class="menu-link">Início</a></li>
             <li><a href="#sobre" class="menu-link">Sobre</a></li>
             <li><a href="#projetos" class="menu-link">Projetos</a></li>
@@ -21,93 +21,204 @@
         </ul>
     </nav>
 
-    <header id="inicio" class="cabecalho">
+    <header id="inicio" class="container">
         <img src="./img/perfil.jpeg" alt="Foto de João Felix" class="foto-perfil" />
         <h1>João Felix</h1>
-        <p class="cabecalho-sub-titulo">Desenvolvedor Java</p>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Java & Full Stack</p>
     </header>
 
-    <section id="sobre" class="sobre">
-        <h2 class="sobre-titulo">Sobre mim</h2>
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">
-                Sou formado em Ciência da Computação e atualmente trabalho como Desenvolvedor Java na IBM,
-                contribuindo para um projeto da empresa VALE. Tenho experiência em desenvolvimento backend
-                utilizando Java e Spring (Boot, MVC, Data, Security, Cloud). No frontend, trabalho com React.js,
-                TypeScript, Tailwind CSS e React Router. Também possuo experiência prática em nuvem com Azure e AWS.
-            </p>
-        </div>
-    </section>
-
-    <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo">Meus Projetos</h2>
-        <div class="projetos-caixa">
-            <!-- Projeto 1 -->
-            <article class="projetos-card">
-                <a href="https://github.com/JoaoFXs/climasync">
-                    <img src="./img/camel.png" alt="Imagem do projeto CLIMASYNC" class="projetos-imagem" />
-                    <div class="caixa-textos-projeto">
-                        <h3 class="info-projetos">CLIMASYNC</h3>
-                        <p class="paragrafo-projetos">ClimaSync é uma plataforma de integração de dados climáticos
-                            desenvolvida com Apache Camel. Ela busca informações do clima (temperatura, umidade,
-                            previsões)
-                            a partir da API OpenMeteo, transforma e valida os dados com XSLT/XSD, e os distribui para
-                            sistemas por meio de filas ActiveMQ e armazenamento em MySQL.</p>
-                    </div>
-                </a>
-            </article>
-
-            <!-- Projeto 2 -->
-            <article class="projetos-card">
-                <a href="https://github.com/JoaoFXs/image-vault">
-                    <img src="./img/imagevault.JPG" alt="Imagem do projeto IMAGE VAULT" class="projetos-imagem" />
-                    <div class="caixa-textos-projeto">
-                        <h3 class="info-projetos">IMAGE VAULT</h3>
-                        <p class="paragrafo-projetos">ImageVault é uma aplicação para armazenar, organizar e buscar
-                            imagens
-                            de forma inteligente, com suporte a filtros por extensão e integração com autenticação de
-                            usuários. Ideal para gerenciar bibliotecas visuais com segurança e praticidade.</p>
-                    </div>
-                </a>
-            </article>
-
-            <!-- Projeto 3 -->
-            <article class="projetos-card">
-                <a href="https://github.com/JoaoFXs/petadoptionapp">
-                    <img src="./img/spring.png" alt="Imagem do projeto ADOPTION PET" class="projetos-imagem" />
-                    <div class="caixa-textos-projeto">
-                        <h3 class="info-projetos">ADOPTION PET - EM DESENVOLVIMENTO</h3>
-                        <p class="paragrafo-projetos">Sistema de adoção de animais utilizando Spring boot e react.
-                        </p>
-                    </div>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Entre em Contato</h2>
-        <form class="formulario-contato" onsubmit="enviarWhats(event)">
-            <div class="grupo-form">
-                <input placeholder="Seu nome" id="nome" class="campo-form" required />
+    <main>
+        <section id="sobre">
+            <div class="container">
+                <h2 class="titulo-secao">Sobre mim</h2>
+                <div class="sobre-caixa">
+                    <p class="sobre-paragrafo">
+                        Sou formado em Ciência da Computação e atualmente trabalho como Desenvolvedor Java na IBM, contribuindo para um projeto da empresa VALE. Tenho experiência em desenvolvimento backend utilizando Java e Spring (Boot, MVC, Data, Security, Cloud). No frontend, trabalho com React.js, TypeScript, Tailwind CSS e React Router. Também possuo experiência prática em nuvem com Azure e AWS.
+                    </p>
+                </div>
             </div>
-            <div class="grupo-form">
-                <textarea id="mensagem" class="campo-form" placeholder="Sua mensagem..." rows="4" required></textarea>
+        </section>
+
+        <section id="projetos">
+            <div class="container">
+                <h2 class="titulo-secao">Meus Projetos</h2>
+                
+                <div class="filtros-projetos">
+                    <button class="filtro-btn active" data-filter="all">Todos</button>
+                    <button class="filtro-btn" data-filter="java">Java</button>
+                    <button class="filtro-btn" data-filter="react">React.js</button>
+                </div>
+
+                <div class="projetos-caixa">
+                    <article class="projetos-card" data-category="java">
+                        <a href="https://github.com/JoaoFXs/climasync" target="_blank" class="card-link-wrapper" aria-label="Ver CLIMASYNC no GitHub">
+                            <div class="card-header">
+                                <h3 class="info-projetos">CLIMASYNC</h3>
+                                <div class="github-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </div>
+                            </div>
+                            <p class="paragrafo-projetos">Plataforma de integração de dados climáticos que busca, transforma e distribui informações para diversos sistemas usando filas e banco de dados.</p>
+                            <div class="card-tags">
+                                <span class="tag">Java</span>        
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Apache Camel</span>
+                                <span class="tag">ActiveMQ</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="projetos-card" data-category="java">
+                        <a href="https://github.com/JoaoFXs/image-vault" target="_blank" class="card-link-wrapper" aria-label="Ver IMAGE VAULT no GitHub">
+                            <div class="card-header">
+                                <h3 class="info-projetos">IMAGE VAULT</h3>
+                                <div class="github-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </div>
+                            </div>
+                            <p class="paragrafo-projetos">Aplicação para armazenar, organizar e buscar imagens de forma inteligente, com suporte a filtros e autenticação de usuários para segurança.</p>
+                            <div class="card-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Spring Security/JWT</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Tailwind CSS</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="projetos-card" data-category="java react">
+                        <a href="https://github.com/JoaoFXs/petadoptionapp" target="_blank" class="card-link-wrapper" aria-label="Ver ADOPTION PET no GitHub">
+                            <div class="card-header">
+                                <h3 class="info-projetos">ADOPTION PET</h3>
+                                <div class="github-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </div>
+                            </div>
+                            <p class="paragrafo-projetos">Sistema full stack para adoção de animais, conectando abrigos e pessoas interessadas em dar um novo lar para um pet.</p>
+                            <div class="card-tags">
+                                 <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">React.js</span>
+                                <span class="tag">Em Desenvolvimento</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="projetos-card" data-category="java">
+                        <a href="https://github.com/JoaoFXs/ConcurrentLabs" target="_blank" class="card-link-wrapper" aria-label="Ver CONCURRENT LABS no GitHub">
+                            <div class="card-header">
+                                <h3 class="info-projetos">CONCURRENT LABS</h3>
+                               <div class="github-icon">
+                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                               </div>
+                            </div>
+                            <p class="paragrafo-projetos">Sistema de reserva de laboratórios com controle de concorrência via Semaphore, processamento em lote e notificação por e-mail.</p>
+                            <div class="card-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Spring Boot JPA</span>
+                                <span class="tag">Spring Validation</span>
+                                <span class="tag">Spring Mail</span>
+                                <span class="tag">Spring Actuator</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">FakeRequisitions</span>
+                                <span class="tag">Concurrency</span>
+                                <span class="tag">Semaphore</span>
+                                <span class="tag">Barrier</span>
+                            </div>
+                        </a>
+                    </article>
+
+                     <article class="projetos-card" data-category="java">
+                        <a href="https://github.com/JoaoFXs/ConcurrentLabs" target="_blank" class="card-link-wrapper" aria-label="Ver CONCURRENT LABS no GitHub">
+                            <div class="card-header">
+                                <h3 class="info-projetos">FAKE REQUISITIONS</h3>
+                               <div class="github-icon">
+                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                               </div>
+                            </div>
+                            <p class="paragrafo-projetos">Biblioteca Java para gerar requisições HTTP com dados falsos (mock) usando Java Faker e enviá-los para um endpoint configurado via Spring Boot.</p>
+                            <div class="card-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">Mock Data</span>
+                                <span class="tag">Package</span>
+                                <span class="tag">Faker</span>
+                                <span class="tag">Gson</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
             </div>
-            <button type="submit" class="botao-form">Enviar WhatsApp</button>
-        </form>
-    </section>
+        </section>
+
+        <section id="contatos">
+            <div class="container">
+                <h2 class="titulo-secao">Entre em Contato</h2>
+                <form class="formulario-contato" onsubmit="enviarWhats(event)">
+                    <div class="grupo-form">
+                        <input placeholder="Seu nome" id="nome" class="campo-form" required />
+                    </div>
+                    <div class="grupo-form">
+                        <textarea id="mensagem" class="campo-form" placeholder="Sua mensagem..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="botao-form">Enviar via WhatsApp</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <script>
+        // Função para envio de WhatsApp
         function enviarWhats(event) {
             event.preventDefault();
             const nome = document.getElementById("nome").value.trim();
             const mensagem = document.getElementById("mensagem").value.trim();
-            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            if (!nome || !mensagem) return;
+            
+            const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
             const url = `https://wa.me/5511967267860?text=${encodeURIComponent(texto)}`;
             window.open(url, "_blank");
         }
+
+        // Função para filtrar projetos
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filtro-btn');
+            const projectCards = document.querySelectorAll('.projetos-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede que o clique no botão ative o link do card
+                    event.stopPropagation(); // Impede a propagação do evento
+
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.dataset.filter;
+
+                    projectCards.forEach(card => {
+                        card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                        card.style.transform = 'scale(0.95)';
+                        card.style.opacity = '0';
+                        card.classList.add('hide');
+
+                        const showCard = filter === 'all' || card.dataset.category.includes(filter);
+
+                        if (showCard) {
+                            setTimeout(() => {
+                                card.classList.remove('hide');
+                                card.style.transform = 'scale(1)';
+                                card.style.opacity = '1';
+                            }, 100);
+                        }
+                    });
+                });
+            });
+        });
     </script>
 </body>
-
 </html>
